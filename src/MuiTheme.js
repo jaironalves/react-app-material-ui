@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles"
-import green from "@material-ui/core/colors/green"
-import pink from "@material-ui/core/colors/pink"
-import red from "@material-ui/core/colors/red"
+import { createMuiTheme } from '@material-ui/core/styles'
+import green from '@material-ui/core/colors/green'
+import pink from '@material-ui/core/colors/pink'
+import red from '@material-ui/core/colors/red'
 
 /*
     Para maiores informações consulte
@@ -12,11 +12,11 @@ const theme = createMuiTheme({
   palette: {
     primary: green,
     secondary: pink,
-    error: red
+    error: red,
   },
-  typography: {      
-      useNextVariants: true,
-  }
+  typography: {
+    useNextVariants: true,
+  },
 })
 
 export default theme

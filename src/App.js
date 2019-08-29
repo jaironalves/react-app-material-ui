@@ -1,14 +1,17 @@
-import React from "react"
-import { MuiThemeProvider } from "@material-ui/core/styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import NavBar from "./components/NavBar"
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import CssBaseLine from '@material-ui/core/CssBaseline'
+import Routes from './Routes'
 
-import theme from "./MuiTheme"
+import theme from './MuiTheme'
 
 const App = () => (
   <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <NavBar />
+    <CssBaseLine />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </MuiThemeProvider>
 )
 
