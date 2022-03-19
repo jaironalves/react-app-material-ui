@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Login from 'src/components/Login'
 import { PublicMain, PublicMenuValues } from 'src/layouts'
 import { setTokenPartner } from 'src/services/auth'
@@ -17,7 +17,7 @@ const handleLogin = user => {
 
 const PartnerLogin = () => (
   <PublicMain menuValue={PublicMenuValues.Partner}>
-    <Login handleLogin={handleLogin} redirectTo={<Redirect to="/parceiro" />} />
+    <Login handleLogin={handleLogin} NavigateTo={<Navigate to="/parceiro" />} />
   </PublicMain>
 )
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Switch, Redirect } from 'react-router-dom'
+import { Routes, Navigate } from 'react-router-dom'
 import RouteWithLayout from 'src/components/RouteWithLayout'
 import { makePrivateLayout } from 'src/layouts'
 import DashboardIcon from '@material-ui/icons/Dashboard'
@@ -63,9 +63,9 @@ const Partner = () => {
   const Layout = makePrivateLayout(pages, handleLogout)
 
   return (
-    <Switch>
-      {logout ? <Redirect to={paths.base} /> : null}
-      <Redirect exact from={paths.base} to={paths.dashboard} />
+    <Routes>
+      {logout ? <Navigate to={paths.base} /> : null}
+      <Navigate exact from={paths.base} to={paths.dashboard} />
       <RouteWithLayout
         component={DashboardView}
         exact
@@ -114,8 +114,8 @@ const Partner = () => {
         layout={Layout}
         path={paths.notfound}
       />
-      <Redirect to={paths.notfound} />
-    </Switch>
+      <Navigate to={paths.notfound} />
+    </Routes>
   )
 }
 

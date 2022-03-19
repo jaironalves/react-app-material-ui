@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Login from 'src/components/Login'
 import { PublicMain, PublicMenuValues } from 'src/layouts'
 import { setTokenClient } from 'src/services/auth'
@@ -20,7 +20,7 @@ const ClientLogin = () => {
     <PublicMain menuValue={PublicMenuValues.Client}>
       <Login
         handleLogin={handleLogin}
-        redirectTo={<Redirect to="/cliente" />}
+        NavigateTo={<Navigate to="/cliente" />}
       />
     </PublicMain>
   )

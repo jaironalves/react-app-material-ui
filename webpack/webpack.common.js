@@ -1,6 +1,7 @@
 import Webpack from 'webpack'
+import ESLintPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import ManifestPlugin from 'webpack-manifest-plugin'
+import { WebpackManifestPlugin }from 'webpack-manifest-plugin'
 import InterpolateHtmlPlugin from 'interpolate-html-plugin'
 import Merge from 'webpack-merge'
 import paths from './paths'
@@ -61,12 +62,12 @@ export default options =>
       strictExportPresence: true,
       rules: [
         { parser: { requireEnsure: false } },
-        {
-          test: /\.js$/,
-          include: paths.srcPath,
-          enforce: 'pre',
-          use: [eslintLoader],
-        },
+        // {
+        //   test: /\.js$/,
+        //   include: paths.srcPath,
+        //   enforce: 'pre',
+        //   //use: [eslintLoader],
+        // },
         {
           oneOf: [
             {
@@ -103,6 +104,7 @@ export default options =>
     },
     plugins: [
       new Webpack.ProgressPlugin(),
+      new ESLintPlugin({}),
       new HtmlWebpackPlugin(
         Object.assign(
           {},
@@ -115,7 +117,7 @@ export default options =>
       new InterpolateHtmlPlugin({
         PUBLIC_URL: '',
       }),
-      new ManifestPlugin({
+      new WebpackManifestPlugin({
         fileName: 'asset-manifest.json',
         publicPath: '/',
         generate: (seed, files) => {

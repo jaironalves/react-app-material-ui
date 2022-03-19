@@ -17,7 +17,10 @@ export default Merge(Common(optionsCommon), {
     },
   },
   devServer: {
-    contentBase: paths.outputPath,
+    static: {
+      directory: paths.outputPath,
+      publicPath: paths.publicPath
+    },    
     port: process.env.PORT || 3000,
     hot: true,
     historyApiFallback: true,

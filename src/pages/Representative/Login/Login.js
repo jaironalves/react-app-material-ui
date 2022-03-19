@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import Login from 'src/components/Login'
 import { PublicMain, PublicMenuValues } from 'src/layouts'
 import { setTokenRepresentative } from 'src/services/auth'
@@ -19,7 +19,7 @@ const RepresentativeLogin = () => (
   <PublicMain menuValue={PublicMenuValues.Representative}>
     <Login
       handleLogin={handleLogin}
-      redirectTo={<Redirect to="/representante" />}
+      redirectTo={<Navigate to="/representante" />}
     />
   </PublicMain>
 )

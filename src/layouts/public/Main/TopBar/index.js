@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { withRouter } from 'react-router-dom'
 import Hidden from '@material-ui/core/Hidden'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
@@ -37,4 +36,4 @@ const TopBar = props => {
 
 export { MenuValues }
 
-export default withRouter(TopBar)
+export default TopBar

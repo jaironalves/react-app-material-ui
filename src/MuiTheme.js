@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles'
 import green from '@material-ui/core/colors/green'
 import pink from '@material-ui/core/colors/pink'
 import red from '@material-ui/core/colors/red'
@@ -8,7 +8,7 @@ import red from '@material-ui/core/colors/red'
     https://material-ui.com/customization/themes/
 */
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: green,
     secondary: pink,

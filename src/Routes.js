@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import Company from './pages/Company'
@@ -21,8 +21,8 @@ import {
 
 import PrivateRoute from './components/PrivateRoute'
 
-const Routes = () => (
-  <Switch>
+const AppRoutes = () => (
+  <Routes>
     <Route exact path={MenuPaths.Home} component={Home} />
     <Route path={MenuPaths.Company} component={Company} />
     <Route exact path={MenuPaths.ClientLogin} component={ClientLogin} />
@@ -51,7 +51,7 @@ const Routes = () => (
       isAuthenticated={isAuthenticatedRepresentative}
     />
     <Route component={NotFound} />
-  </Switch>
+  </Routes>
 )
 
-export default Routes
+export default AppRoutes

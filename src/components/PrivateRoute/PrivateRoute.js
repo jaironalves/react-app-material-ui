@@ -1,10 +1,10 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import { Route, Navigate } from 'react-router-dom'
 
 const PrivateRoute = ({
   component: Component,
   isAuthenticated,
-  redirectPath,
+  NavigatePath,
   ...rest
 }) => (
   <Route
@@ -13,9 +13,9 @@ const PrivateRoute = ({
       isAuthenticated() ? (
         <Component {...props} />
       ) : (
-        <Redirect
+        <Navigate
           to={{
-            pathname: `${redirectPath}`,
+            pathname: `${NavigatePath}`,
             state: { from: props.location },
           }}
         />
